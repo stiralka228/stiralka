@@ -1,0 +1,33 @@
+Хуки
+1. https://www.atlassian.com/ru/git/tutorials/git-hooks
+2. https://habr.com/ru/companies/2gis/articles/838966/
+
+Workflows
+1. https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax
+2. https://habr.com/ru/companies/X5Tech/articles/651451/
+3. https://docs.github.com/ru/actions/reference/workflows-and-actions/events-that-trigger-workflows
+4. https://docs.github.com/ru/actions/how-tos/write-workflows/choose-what-workflows-do/use-secrets
+
+Некоторые actions
+1. https://github.com/marketplace/actions/build-and-push-docker-images
+2. https://github.com/marketplace/actions/docker-setup-docker
+3. https://github.com/appleboy/ssh-action
+
+В рамках лабораторной работы необходимо настроить процесс непрерывной интеграции (CI) с использованием GitHub Actions для выбранного проекта (Вариант выбирается согласно порядковому номеру в ЭУ. Проекты не должны повторяться.).
+
+Основная цель — автоматизировать проверку качества кода при каждом изменении в репозитории.
+
+Для этого требуется:
+- Выбрать существующий публичный репозиторий или использовать собственный проект
+- Убедиться, что в проекте отсутствуют готовые CI-конфигурации
+- Добавить тесты (если их нет), покрыв минимум 3 функции или метода
+- Создать workflow-файл .github/workflows/ci.yml
+
+Pipeline должен включать три обязательных этапа:
+1. Lint (статический анализ кода). Проверка кода на стиль, потенциальные ошибки и несоответствие стандартам
+2. Test (запуск тестов). Автоматический запуск тестов для проверки корректности работы программы. Желательно использовать покрытие кода (coverage)
+3. Build (сборка проекта). Создание итогового артефакта (пакета, бинарника, Docker-образа и т.д.). 
+
+После настройки необходимо убедиться, что workflow:
+1. автоматически запускается при push в ветку main
+2. успешно проходит все этапы
