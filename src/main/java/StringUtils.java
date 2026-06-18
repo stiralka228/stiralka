@@ -1,4 +1,4 @@
-package com.example;
+import java.util.Locale;
 
 public class StringUtils {
 
@@ -6,7 +6,7 @@ public class StringUtils {
         if (s == null) {
             return false;
         }
-        String cleaned = s.replaceAll("\\s+", "").toLowerCase();
+        String cleaned = s.replaceAll("\\s+", "").toLowerCase(Locale.ROOT);
         return cleaned.equals(new StringBuilder(cleaned).reverse().toString());
     }
 
@@ -21,7 +21,7 @@ public class StringUtils {
         if (s == null) {
             return 0;
         }
-        return (int) s.toLowerCase().chars()
+        return (int) s.toLowerCase(Locale.ROOT).chars()
                 .filter(c -> "aeiou".indexOf(c) != -1)
                 .count();
     }

@@ -1,5 +1,3 @@
-package com.example;
-
 public class ArrayUtils {
 
     public int findMax(int[] arr) {
